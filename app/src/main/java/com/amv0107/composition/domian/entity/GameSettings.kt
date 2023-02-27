@@ -1,10 +1,12 @@
 package com.amv0107.composition.domian.entity
 
-import java.io.Serializable
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class GameSettings(
     val maxSumValue: Int,
     val minCountOfRightAnswers: Int,
     val minPercentOfRightAnswer: Int,
     val gameTimeInSeconds: Int
-): Serializable
+): Parcelable
