@@ -19,7 +19,7 @@ class ChooseLevelFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentChooseLevelBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentChooseLevelBinding.inflate(inflater, container, false)
         return binding.root
     }
 

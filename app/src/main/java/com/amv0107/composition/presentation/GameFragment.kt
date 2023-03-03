@@ -13,7 +13,6 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory
 import com.amv0107.composition.R
 import com.amv0107.composition.databinding.FragmentGameBinding
 import com.amv0107.composition.domian.entity.GameResult
-import com.amv0107.composition.domian.entity.GameSettings
 import com.amv0107.composition.domian.entity.Level
 
 class GameFragment : Fragment() {
@@ -50,7 +49,7 @@ class GameFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentGameBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentGameBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -72,7 +71,7 @@ class GameFragment : Fragment() {
     private fun observeViewModel() {
         viewModel.question.observe(viewLifecycleOwner) {
             binding.tvSum.text = it.sum.toString()
-            binding.tvLeftNumber.text = it.sum.toString()
+            binding.tvLeftNumber.text = it.visibleNumber.toString()
             for (i in 0 until tvOptions.size) {
                 tvOptions[i].text = it.options[i].toString()
             }
@@ -100,6 +99,14 @@ class GameFragment : Fragment() {
         viewModel.gameResult.observe(viewLifecycleOwner){
             launchGameFinishedFragment(it)
         }
+        viewModel.progressAnswers.observe(viewLifecycleOwner){
+            binding.tvAnswersProgress.text = it
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
     private fun getColorByState(goodState: Boolean): Int {
@@ -111,9 +118,10 @@ class GameFragment : Fragment() {
         return ContextCompat.getColor(requireContext(), colorResId)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
+    private fun parseArgs() {
+        requireArguments().getParcelable<Level>(KEY_LEVEL)?.let {
+            level = it
+        }
     }
 
     private fun launchGameFinishedFragment(gameResult: GameResult) {
@@ -121,12 +129,6 @@ class GameFragment : Fragment() {
             .replace(R.id.main_container, GameFinishedFragment.newInstance(gameResult))
             .addToBackStack(null)
             .commit()
-    }
-
-    private fun parseArgs() {
-        requireArguments().getParcelable<Level>(KEY_LEVEL)?.let {
-            level = it
-        }
     }
 
     companion object {
