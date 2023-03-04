@@ -7,12 +7,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.amv0107.composition.R
 import com.amv0107.composition.data.GameRepositoryImpl
-import com.amv0107.composition.domian.entity.GameResult
-import com.amv0107.composition.domian.entity.GameSettings
-import com.amv0107.composition.domian.entity.Level
-import com.amv0107.composition.domian.entity.Question
-import com.amv0107.composition.domian.usacases.GenerateQuestionUseCase
-import com.amv0107.composition.domian.usacases.GetGameSettingsUseCase
+import com.amv0107.composition.domain.entity.GameResult
+import com.amv0107.composition.domain.entity.GameSettings
+import com.amv0107.composition.domain.entity.Level
+import com.amv0107.composition.domain.entity.Question
+import com.amv0107.composition.domain.usacases.GenerateQuestionUseCase
+import com.amv0107.composition.domain.usacases.GetGameSettingsUseCase
 
 class GameViewModel(
      private val application: Application,

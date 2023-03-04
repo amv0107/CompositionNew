@@ -1,4 +1,4 @@
-package com.amv0107.composition.domian.entity
+package com.amv0107.composition.domain.entity
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -9,4 +9,7 @@ data class GameResult(
     val countOfRightAnswers: Int,
     val countOfQuestions: Int,
     val gameSettings: GameSettings
-): Parcelable
+): Parcelable{
+    val countOfRightAnswersSting: String
+        get() = countOfRightAnswers.toString()
+}

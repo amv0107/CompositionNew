@@ -1,7 +1,7 @@
-package com.amv0107.composition.domian.usacases
+package com.amv0107.composition.domain.usacases
 
-import com.amv0107.composition.domian.entity.Question
-import com.amv0107.composition.domian.repository.GameRepository
+import com.amv0107.composition.domain.entity.Question
+import com.amv0107.composition.domain.repository.GameRepository
 
 class GenerateQuestionUseCase(
     private val repository: GameRepository

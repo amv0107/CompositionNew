@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.amv0107.composition.R
 import com.amv0107.composition.databinding.FragmentChooseLevelBinding
-import com.amv0107.composition.domian.entity.Level
+import com.amv0107.composition.domain.entity.Level
 
 class ChooseLevelFragment : Fragment() {
 

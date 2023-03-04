@@ -3,7 +3,7 @@ package com.amv0107.composition.presentation
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.amv0107.composition.domian.entity.Level
+import com.amv0107.composition.domain.entity.Level
 
 class GameViewModelFactory(
     private val level: Level,

@@ -9,13 +9,10 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.amv0107.composition.R
 import com.amv0107.composition.databinding.FragmentGameBinding
-import com.amv0107.composition.domian.entity.GameResult
-import com.amv0107.composition.domian.entity.Level
+import com.amv0107.composition.domain.entity.GameResult
 
 class GameFragment : Fragment() {
 

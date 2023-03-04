@@ -1,9 +1,9 @@
 package com.amv0107.composition.data
 
-import com.amv0107.composition.domian.entity.GameSettings
-import com.amv0107.composition.domian.entity.Level
-import com.amv0107.composition.domian.entity.Question
-import com.amv0107.composition.domian.repository.GameRepository
+import com.amv0107.composition.domain.entity.GameSettings
+import com.amv0107.composition.domain.entity.Level
+import com.amv0107.composition.domain.entity.Question
+import com.amv0107.composition.domain.repository.GameRepository
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.random.Random
